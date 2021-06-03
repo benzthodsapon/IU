@@ -1,25 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import AppHeader from './AppHeader';
+import IuItem from './IuItem';
+import IuTopost from './IuToPost';
+import ius from './data/ius';
+import { useState } from 'react';
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [selectedIU, setSelectedIU] = useState(ius[null]);
+    const iuElement = ius.map((iu, index) => {
+        return <IuItem key={index} iu={iu} />;
+    });
+
+    let iutoPost = null;
+    if (!!selectedIU) {
+        iutoPost = <IuTopost />
+
+    }
+
+    return (
+        <div className="app">
+            <AppHeader />
+            <div className="app-grid">
+                {iuElement}
+            </div>
+            {iutoPost}
+        </div >
+
+
+
+    );
 }
 
 export default App;
