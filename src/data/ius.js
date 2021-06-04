@@ -3,6 +3,7 @@ const ius = [
 
         tittle: "StayWithIU[01]",
         picUrl: "/images/1.png"
+        
 
     },
     {

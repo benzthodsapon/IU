@@ -1,11 +1,12 @@
 import './IuToPost.css';
-function IuToPost(){
+function IuToPost(props){
+    const { iu,onBgClick } = props;
     return(
         <div className ="Iu-post">
-            <div className = "Iu-post-bg"/>
+            <div className = "Iu-post-bg" onClick = {onBgClick} />
             <div className = "Iu-post-content">
-                <img src="/images/1.png" />
-                <h4>eiei01</h4>
+                <img src={iu.picUrl} />
+                <h4>{iu.tittle}</h4>
             </div>
 
         </div>
